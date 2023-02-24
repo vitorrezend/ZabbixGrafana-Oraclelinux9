@@ -17,6 +17,9 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 443, host: 8090
   config.vm.network "private_network", ip: "192.168.50.10"
   config.vm.provision :shell, path: "start.sh"
+  config.vm.provision :shell, path: "mysql.sh"
+  config.vm.provision :shell, path: "grafana.sh"
+  config.vm.provision :shell, path: "zabbix.sh"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
